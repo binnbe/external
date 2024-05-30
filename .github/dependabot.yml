@@ -1,0 +1,40 @@
+# Basic set up for three package managers
+
+version: 2
+updates:
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    reviewers:
+      - cruex-de
+    assignees:
+      - cruex-de
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
+    target-branch: "next"
+    labels:
+      - "dependencies"
+
+  # Maintain dependencies for Gitsubmodule
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    allow:
+      - dependency-name: "protobuf"
+    schedule:
+      interval: "daily"
+    reviewers:
+      - cruex-de
+    assignees:
+      - cruex-de
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
+    target-branch: "main"
+    labels:
+      - "dependencies"
