@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 1
       - name: Syncing labels
-        uses: crazy-max/ghaction-github-labeler@v5.0.0
+        uses: crazy-max/ghaction-github-labeler@v5.1.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           yaml-file: .github/labels.yml
